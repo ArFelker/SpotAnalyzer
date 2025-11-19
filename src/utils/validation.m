@@ -1,0 +1,76 @@
+function validation(baitPath, preyPaths, params)
+% validateAnalysisInputs Validate input files and parameters
+%
+% INPUTS:
+%   baitPath   - Path to bait image
+%   preyPaths  - Cell array of prey image paths
+%   params     - Parameter structure
+
+assert(isfile(baitPath), 'Bait image not found: %s', baitPath);
+
+for i = 1:numel(preyPaths)
+    assert(isfile(preyPaths{i}), 'Prey image %d not found: %s', ...
+        i, preyPaths{i});
+end
+
+assert(isfield(params, 'pixelSize') && params.pixelSize > 0, ...
+    'Invalid pixel size');
+assert(isfield(params, 'offset') && params.offset >= 0, ...
+    'Invalid offset value');
+assert(isfield(params, 'sigma') && params.sigma > 0, ...
+    'Invalid sigma value');
+assert(isfield(params, 'threshold') && params.threshold >= 0, ...
+    'Invalid threshold value');
+assert(isfield(params, 'gap') && params.gap >= 0, ...
+    'Invalid gap value');
+assert(isfield(params, 'width') && params.width > 0, ...
+    'Invalid width value');
+
+baitInfo = imfinfo(baitPath);
+for i = 1:numel(preyPaths)
+    preyInfo = imfinfo(preyPaths{i});
+    assert(isequal([baitInfo.Height, baitInfo.Width], ...
+                   [preyInfo.Height, preyInfo.Width]), ...
+        'Image dimensions must match for all channels');
+end
+end
+
+function tf = isValidImageFile(filepath)
+% isValidImageFile Check if file is a valid image
+tf = false;
+if ~isfile(filepath), return; end
+
+try
+    info = imfinfo(filepath);
+    tf = ~isempty(info);
+catch
+    tf = false;
+end
+end
+
+function params = validateAndFillDefaults(params)
+% validateAndFillDefaults Ensure all required parameters exist with defaults
+
+defaults = struct( ...
+    'pixelSize', 130, ...
+    'offset', 400, ...
+    'sigma', 1.75, ...
+    'threshold', 1.0, ...
+    'gap', 2.0, ...
+    'width', 1.5, ...
+    'minMeanI', 0, ...
+    'minArea', 10, ...
+    'minRound', 0.6, ...
+    'maxRound', 1.3, ...
+    'minCenterDist', 0, ...
+    'areaThreshold', 0.90, ...
+    'ringExpandPx', 1 ...
+);
+
+fields = fieldnames(defaults);
+for i = 1:numel(fields)
+    if ~isfield(params, fields{i})
+        params.(fields{i}) = defaults.(fields{i});
+    end
+end
+end

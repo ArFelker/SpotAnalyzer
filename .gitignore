@@ -1,0 +1,35 @@
+# MATLAB
+*.asv
+*.m~
+*.autosave
+
+# Excel temporary files
+~$*.xlsx
+~$*.xls
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Test data
+test_data/
+example_images/
+*.tif
+*.tiff
+
+# MATLAB compiled
+*.exe
+*.app
+*.mex*
+*.p
+
+# Output files
+*_Results.xlsx
+output/
+results/
+
+# IDE
+.vscode/
+.idea/
+*.swp

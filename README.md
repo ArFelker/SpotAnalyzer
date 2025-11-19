@@ -24,7 +24,7 @@ MATLAB GUI tool for automated detection and quantification of nanodots in TIRF m
 - **MATLAB:** R2020b or later (tested with R2023b)
 - **Toolboxes:** Image Processing Toolbox (required)
 
-### For Standalone Version (No MATLAB License Required)
+### For Standalone Version
 - **OS:** Windows 10/11
 - **RAM:** 8 GB minimum, 16 GB recommended
 - **Runtime:** MATLAB Runtime R2022b (included in installer, ~2-3 GB)

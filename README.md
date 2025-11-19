@@ -31,7 +31,7 @@ MATLAB GUI tool for automated detection and quantification of nanodots in TIRF m
 
 ## Installation
 
-### Option 1: Standalone Version (No MATLAB Required)
+### Option 1: Standalone Version
 
 1. Download the installer from [Releases](https://github.com/ArFelker/SpotAnalyzer/releases)
 2. Run the installer (installs MATLAB Runtime automatically if needed)

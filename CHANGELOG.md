@@ -2,7 +2,7 @@
 
 All notable changes to SpotAnalyzer will be documented in this file.
 
-## [1.0.0] - 2025-01-20
+## [1.0.0] - 2025-11-19
 
 ### Initial Release
 
@@ -60,7 +60,6 @@ Complete MATLAB GUI tool for automated nanodot detection and quantification in T
 - **Standalone Version** (Windows)
   - No MATLAB license required
   - MATLAB Runtime R2022b (included in installer)
-  - ~2-3 GB installation size
 
 #### Documentation
 - Comprehensive README with quick start guide

@@ -27,14 +27,14 @@ MATLAB GUI tool for automated detection and quantification of nanodots in TIRF m
 ### For Standalone Version
 - **OS:** Windows 10/11
 - **RAM:** 8 GB minimum, 16 GB recommended
-- **Runtime:** MATLAB Runtime R2022b (included in installer, ~2-3 GB)
+- **Runtime:** MATLAB Runtime R2022b 
 
 ## Installation
 
 ### Option 1: Standalone Version
 
 1. Download the installer from [Releases](https://github.com/ArFelker/SpotAnalyzer/releases)
-2. Run the installer (installs MATLAB Runtime automatically if needed)
+2. Run the installer
 
 
 ### Option 2: MATLAB Source Code

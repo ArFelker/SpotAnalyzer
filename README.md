@@ -89,7 +89,7 @@ Options:
 | Sigma (σ) | LoG filter size (px) | 1.75 |
 | Threshold | Detection threshold (σ units) | 1.0 |
 | Gap | Buffer zone width (px) | 1.25 |
-| Background | Ring width for I_bg (px) | 1.0 (fixed) |
+| Background | Ring width for I_bg (px) | 1.0 |
 
 ## Quantification Metrics
 
